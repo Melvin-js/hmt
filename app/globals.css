@@ -20,6 +20,13 @@ body {
   background-color: #F5F3F0;
 }
 
+.primaryButton{
+  margin: 30px 30px;
+  padding: 10px 20px;
+  background-color: #FF5A5A;
+  color: white;
+  border-radius: 8px;
+}
 
 
 /* @media (prefers-color-scheme: dark) {
