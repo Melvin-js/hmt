@@ -1,0 +1,67 @@
+
+.banner{
+    background: linear-gradient(45deg, #D4A959, #E19736, #C66B00);
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(25px,5%, 50px);
+    border-radius: 20px;
+    margin: 5px 0;
+
+    
+}
+
+.banner p{
+    width: clamp(150px, 30vw, 390px);
+    color: white;
+}
+
+.banner:hover{
+    gap: clamp(25px,5%, 60px);
+    transition: 0.4s ease-in-out;
+
+}
+
+@media (max-width: 1080px) {
+
+    .banner{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .bannerImage{
+        margin-top: 5px;
+        height: 40px;
+        width: auto;
+    }
+    .banner p{
+        width: 400px;
+        text-align: center;
+        font-size: 14px;
+    }
+}
+
+
+
+@media (max-width: 600px) {
+
+    .banner{
+        background: linear-gradient(45deg, #ebbb62, #eea039, #d87300);
+        flex-direction: column;
+        gap: 6px;
+        border-radius: 15px;
+        height: 125px;
+    }
+
+    .bannerImage{
+        margin-top: 6px;
+        height: 28px;
+        width: auto;
+    }
+    .banner p{
+        width: 285px;
+        text-align: center;
+        font-size: 12px;
+    }
+}

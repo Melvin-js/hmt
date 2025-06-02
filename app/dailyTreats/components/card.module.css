@@ -1,13 +1,17 @@
 .card{
     display: flex;
     flex-direction: column;
-    width: 220px;
-    margin-top: 20px;
+    width: 212px;
+    width: 100%;
+}
+
+.card:hove{
+    border: 1solid #FF5A5A;
 }
 
 .card h5{
     margin-top: 10px;
-    font-size: 15px;
+    font-size: 15.5px;
 }
 
 .tag{
@@ -15,4 +19,91 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    user-select: none;
+}
+
+.tag h4{
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.addButton{
+    background-color: #FF5A5A;
+    padding: 8px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    cursor: pointer;
+
+}
+
+.addButton:hover{
+    background-color: #f72f2f;
+}
+
+.addButton:active{
+    transform: scale(0.95);
+    transition: 0.2s ease-in;
+}
+
+.container{
+    display: flex;
+    gap:10px;
+   margin-bottom: 3px;
+}
+
+.counter{
+    color: white;
+    background-color: #3f3f3f;
+    font-weight: 600;
+    padding: 5px 5px;
+    width: 35px;
+    border-radius: 6px;
+}
+
+.button{
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+    .card h5{
+        font-size: 13px;
+    }
+
+    .tag h4{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .addButton{
+        background-color: #FF5A5A;
+        padding: 8px 28px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: white;
+        border-radius: 6px;
+        margin-bottom: 4px;
+        cursor: pointer;
+    
+    }
+
+    .container{
+        display: flex;
+        gap:10px;
+        padding-right: 5px;
+        margin-bottom: 3px;
+    }
+
+    .button{
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    
 }
