@@ -25,6 +25,7 @@
     align-items: center;
     width: 100%;
     padding-right: 6px;
+    z-index: 1000;
 }
 
 .logo {
@@ -40,6 +41,11 @@
     color: var(--foreground);
 }
 
+.ham_icon:active{
+    transform: scale(0.96);
+    transition: 0.15s ease-in-out;
+}
+
 .navLinkText {
     display: flex;
     gap: 50px;
@@ -47,6 +53,11 @@
     font-weight: 500;
     font-size: 15px;
     color: var(--foreground);
+    transition: 0.15s ease-in-out;
+}
+
+.navLinkText a {
+    transition: 0.15s ease-in-out;
 }
 
 .navLinkText a:hover {
@@ -94,12 +105,13 @@
     height: 100%;
     width: 100%;
     user-select: none;
+    transition: 0.2s ease-in-out;
 }
 
 .search:hover {
     border: 1px solid black;
-    padding-left: 24px;
-    transition: 0.2s ease-in-out;
+    padding-left: 25px;
+    transition: 0.3s ease-in-out;
 }
 
 
@@ -130,6 +142,7 @@
     border-radius: 8px;
     cursor: pointer;
     height: 45.5px;
+    transition: 0.2s ease-in-out;
 }
 
 .dropdownButton:hover {
@@ -195,6 +208,7 @@
     gap: 5px;
     width: clamp(120px, 10vw, 140px);
     flex-wrap: wrap;
+    transition: 0.15s ease-in;
 }
 
 .categoryItem:hover {
@@ -218,6 +232,7 @@
 .categoryIcons {
     width: auto;
     height: 32px;
+    transition: 0.3s ease-in-out;
 }
 
 .categoryItem h5 {
@@ -251,10 +266,13 @@
     width: 100%;
 }
 
+/* Right Pane */
+
 .rightPane {
     width: 240px;
     min-width: 230px;
     margin-left: 20px;
+    overflow: hidden;
 }
 
 .cart h2 {

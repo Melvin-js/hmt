@@ -15,6 +15,9 @@ import ItemCard from './components/card';
 import Banner from './components/banner';
 import adBanner from '@/public/images/adBanner.png';
 
+
+
+
 export default function DailyTreatsPage() {
     const [quantity, setQuantity] = useState(0);
 
@@ -35,6 +38,14 @@ export default function DailyTreatsPage() {
     }
 
     const [selectedCategory, setSelectedCategory] = useState('Cakes');
+
+    const categories = [
+        { name: 'Cakes', image: cakes },
+        { name: 'Snacks', image: snacks },
+        { name: 'Condiments', image: condiments },
+        { name: 'Takeaways', image: takeaways },
+        { name: 'Specials', image: specials }
+    ];
 
     return (
         <>
@@ -74,53 +85,28 @@ export default function DailyTreatsPage() {
                                             <a href="#" onClick={() => handleSortChange('Alphabetic Order')}>Alphabetic Order</a>
                                         </div>
                                     )}
+                                    
+
                                 </div>
 
                             </div>
                         </div>
 
                         <div className={styles.category}>
-                            <div
-                                className={`${styles.categoryItem} ${selectedCategory === 'Cakes' ? styles.activeCate : ''}`}
-                                onClick={() => setSelectedCategory('Cakes')}
-                            >
-                                <Image src={cakes} alt="Cakes" className={styles.categoryIcons} />
-                                <h5>Cakes</h5>
-                            </div>
+                            {categories.map((category, index) => (
+                                <div
+                                    key={category.name}
+                                    className={`${styles.categoryItem} ${selectedCategory === category.name ? styles.activeCate : ''}`}
+                                    onClick={() => setSelectedCategory(category.name)}
 
-                            <div
-                                className={`${styles.categoryItem} ${selectedCategory === 'Snacks' ? styles.activeCate : ''}`}
-                                onClick={() => setSelectedCategory('Snacks')}
-                            >
-                                <Image src={snacks} alt="Snacks" className={styles.categoryIcons} />
-                                <h5>Snacks</h5>
-                            </div>
-
-                            <div
-                                className={`${styles.categoryItem} ${selectedCategory === 'Condiments' ? styles.activeCate : ''}`}
-                                onClick={() => setSelectedCategory('Condiments')}
-                            >
-                                <Image src={condiments} alt="Condiments" className={styles.categoryIcons} />
-                                <h5>Condiments</h5>
-                            </div>
-
-                            <div
-                                className={`${styles.categoryItem} ${selectedCategory === 'Takeaways' ? styles.activeCate : ''}`}
-                                onClick={() => setSelectedCategory('Takeaways')}
-                            >
-                                <Image src={takeaways} alt="Takeaways" className={styles.categoryIcons} />
-                                <h5>Takeaways</h5>
-                            </div>
-
-                            <div
-                                className={`${styles.categoryItem} ${selectedCategory === 'Specials' ? styles.activeCate : ''}`}
-                                onClick={() => setSelectedCategory('Specials')}
-                            >
-                                <Image src={specials} alt="Specials" className={styles.categoryIcons} />
-                                <h5>Specials</h5>
-                            </div>
+                                >
+                                    <Image src={category.image} alt={category.name} className={styles.categoryIcons} />
+                                    <h5>{category.name}</h5>
+                                </div>
+                            ))}
                         </div>
                         <div className={styles.itemContainer}>
+
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
@@ -142,7 +128,7 @@ export default function DailyTreatsPage() {
                                     {Array(data).fill(null).map((_, index) => (
                                         <div key={index} className={styles.item}>
                                             <p>Party Cakelet Chocolate Single 200gms </p>
-                                            <p style={{ whiteSpace: 'nowrap' }}><p style={{ fontWeight: '600' }}>Rs 500</p></p>
+                                            <p style={{ whiteSpace: 'nowrap' }}>Rs 500</p>
                                         </div>
                                     ))}
                                 </>

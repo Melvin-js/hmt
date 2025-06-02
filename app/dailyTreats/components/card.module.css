@@ -3,11 +3,9 @@
     flex-direction: column;
     width: 212px;
     width: 100%;
+    overflow: hidden;
 }
 
-.card:hove{
-    border: 1solid #FF5A5A;
-}
 
 .card h5{
     margin-top: 10px;
@@ -36,11 +34,13 @@
     border-radius: 6px;
     margin-bottom: 4px;
     cursor: pointer;
+    transition: 0.15s ease-in-out;
 
 }
 
 .addButton:hover{
     background-color: #f72f2f;
+    transition: 0.15s ease-in-out;
 }
 
 .addButton:active{
@@ -58,6 +58,7 @@
     color: white;
     background-color: #3f3f3f;
     font-weight: 600;
+    height: 35px;
     padding: 5px 5px;
     width: 35px;
     border-radius: 6px;
