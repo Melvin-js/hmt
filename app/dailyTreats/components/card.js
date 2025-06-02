@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './card.module.css';
 import Image from 'next/image';
-import cake from '@/public/images/cake.png';
+import cake from '@/public/images/Cake.png';
 
 function ItemCard({ data }) {
   const [count, setCount] = useState(0); // Initial count is 0

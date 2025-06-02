@@ -1,7 +1,7 @@
 import styles from './banner.module.css';
 import react from 'react';
 import Image from 'next/image';
-import todaysMenu from '@/public/images/todaysMenu.png';
+import todaysMenu from '@/public/images/TodaysMenu.png';
 
 function Banner () {
     return(
