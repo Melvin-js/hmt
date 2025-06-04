@@ -47,6 +47,8 @@ export default function DailyTreatsPage() {
         { name: 'Specials', image: specials }
     ];
 
+    
+
     return (
         <>
             <div className={styles.container}>

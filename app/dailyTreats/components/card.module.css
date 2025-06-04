@@ -1,18 +1,178 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
-    width: 212px;
     width: 100%;
     overflow: hidden;
 }
 
-
-.card h5{
+.card h5 {
     margin-top: 10px;
     font-size: 15.5px;
 }
 
-.tag{
+/* Popup Message */
+.cutomizeButton {
+    display: flex;
+    gap: 5px;
+    margin-top: 6px;
+    margin-bottom: -5px;
+    justify-content: start;
+    align-items: center;
+    user-select: none;
+    font-size: 14.5px;
+    color: rgb(91, 91, 91);
+    cursor: pointer;
+    transition: 0.05s ease-in;
+    ;
+}
+
+.cutomizeButton:hover {
+    color: rgb(0, 0, 0);
+    transition: 0.05s ease-in;
+    ;
+}
+
+.cutomizeButton:active {
+    transform: scale(0.95);
+    transition: 0.2s ease-in-out;
+    ;
+}
+
+.popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    height: 100dvh;
+    height: 100vh;
+}
+
+.messagePopup {
+    position: relative;
+    height: 580px;
+    background-color: var(--background);
+    width: clamp(200px, 80vw, 450px);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.popupContent {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.popupImage{
+    margin: auto;
+    margin-top: -60px;
+    margin-bottom: -30px;
+
+}
+
+.popupContent h4 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.popupContent p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(68, 68, 68);
+}
+
+.messageInput {
+    margin-top: 10px;
+    background-color: rgb(233, 233, 233);
+    padding: 10px 18px;
+    border-radius: 8px;
+    height: 100px;
+    vertical-align: top;
+    resize: none;
+    transition: 0.2s ease-in;
+    border: none;
+    outline: none;
+}
+
+.messageInput:hover {
+    border: 1px solid rgb(173, 173, 173);
+    transition: 0.2s ease-in;
+}
+
+.messageInput:focus {
+    border: 1px solid rgb(42, 42, 42);
+    transition: 0.2s ease-in;
+}
+
+.popupButtons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.popupSave {
+    background-color: #FF5A5A;
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    width: 100%;
+}
+
+.popupCancel:hover {
+    background-color: #dbdbdb;
+    transition: 0.15s ease-in-out;
+}
+
+.popupCancel:active {
+    transform: scale(0.95);
+    transition: 0.15s ease-in-out;
+}
+
+.popupCancel {
+    background-color: rgb(233, 233, 233);
+    padding: 8px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgb(24, 24, 24);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    width: 100%;
+}
+
+.popupSave:hover {
+    background-color: #e03636;
+    transition: 0.15s ease-in-out;
+}
+
+.popupSave:active {
+    transform: scale(0.95);
+    transition: 0.2s ease-in;
+}
+
+.tag {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,12 +180,12 @@
     user-select: none;
 }
 
-.tag h4{
+.tag h4 {
     font-weight: 500;
     font-size: 17px;
 }
 
-.addButton{
+.addButton {
     background-color: #FF5A5A;
     padding: 8px 30px;
     font-size: 13px;
@@ -35,26 +195,24 @@
     margin-bottom: 4px;
     cursor: pointer;
     transition: 0.15s ease-in-out;
-
 }
 
-.addButton:hover{
+.addButton:hover {
     background-color: #f72f2f;
-    transition: 0.15s ease-in-out;
 }
 
-.addButton:active{
+.addButton:active {
     transform: scale(0.95);
     transition: 0.2s ease-in;
 }
 
-.container{
+.container {
     display: flex;
-    gap:10px;
-   margin-bottom: 3px;
+    gap: 10px;
+    margin-bottom: 3px;
 }
 
-.counter{
+.counter {
     color: white;
     background-color: #3f3f3f;
     font-weight: 600;
@@ -64,47 +222,100 @@
     border-radius: 6px;
 }
 
-.button{
+.button {
     font-size: 24px;
     font-weight: 500;
     cursor: pointer;
 }
 
+.message {
+    display: flex;
+    gap: 5px;
+    margin-top: 6px;
+    margin-bottom: -5px;
+    justify-content: start;
+    align-items: center;
+    user-select: none;
+    font-size: 14.5px;
+    color: rgb(113, 113, 113);
+    cursor: pointer;
+}
 
+
+
+/* Responsive styles */
 @media (max-width: 600px) {
-    .card h5{
+    .card h5 {
         font-size: 13px;
     }
 
-    .tag h4{
-        font-weight: 500;
+    .tag h4 {
         font-size: 16px;
     }
 
-    .addButton{
-        background-color: #FF5A5A;
+    .addButton {
         padding: 8px 28px;
         font-size: 12.5px;
-        font-weight: 600;
-        color: white;
-        border-radius: 6px;
-        margin-bottom: 4px;
-        cursor: pointer;
-    
     }
 
-    .container{
-        display: flex;
-        gap:10px;
+    .container {
         padding-right: 5px;
-        margin-bottom: 3px;
     }
 
-    .button{
+    .button {
         font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
     }
 
+
+    .cutomizeButton {
+        font-size: 13px;
+
+    }
+
+    .closeButton {
+        top: 15px;
+        right: 20px;
+        font-size: 18px;
+    }
+
+    .messagePopup{
+        height: 480px;
+    }
+    .popupImage{
+        margin: auto;
+        margin-top: -30px;
+        margin-bottom: -20px;
     
+    }
+
+    .popupContent h4 {
+        font-size: 19px;
+        font-weight: 600;
+    }
+
+    .popupContent p {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(78, 78, 78);
+    }
+
+    .messageInput {
+        font-size: 14px;
+    }
+
+
+    .popupButtons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .popupSave,
+    .popupCancel {
+        font-size: 14px;
+    }
+
+
 }
