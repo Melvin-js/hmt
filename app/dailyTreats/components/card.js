@@ -57,6 +57,26 @@ function ItemCard({ data, cakeMsg }) {
     setIsPopupVisible(false); // Close the popup
   };
 
+  const [msgCount, setMsgCount] = useState(1); 
+  const [initialMsgCount, setInitialMsgCount] = useState(1);
+
+  const handleMsgCountChange = (event) => {
+    // Update state with the selected value from the dropdown
+    setMsgCount(event.target.value);
+  };
+
+  const generateOptions = (max) => {
+    let options = [];
+    for (let i = 0; i <= max; i++) {
+      options.push(
+        <option key={i} value={i}>
+          {i}
+        </option>
+      );
+    }
+    return options;
+  };
+
   return (
     <div className={styles.card}>
       <Image src={cake} alt="Cake" className={styles.cake} />
@@ -83,15 +103,22 @@ function ItemCard({ data, cakeMsg }) {
               <i className="fa-solid fa-xmark"></i>
             </button>
             <div className={styles.popupContent}>
-              <Image src={cakePopup} alt="Cake Popup" className={styles.popupImage} width={400}/>
+              <Image src={cakePopup} alt="Cake Popup" className={styles.popupImage} width={400} />
               <h4>Customize your order</h4>
               <p>Write a message on the cake</p>
               <textarea
                 className={styles.messageInput}
                 placeholder="Enter the message..."
                 value={message} // Controlled component with state
-                onChange={handleChange} // Correct onChange handler
+                onChange={handleChange}
+                maxLength="40" // Correct onChange handler
               />
+              {count > 1 && <div className={styles.countCakes}>
+                <label for="cakeCount">Choose the number of cakes to add a special message on.</label>
+                <select id="cakeCount" name="cakeCount" value={msgCount} onChange={handleMsgCountChange}>
+                {generateOptions(count)}
+                </select>
+              </div>}
               <div className={styles.popupButtons}>
                 <button className={styles.popupCancel} onClick={handleCancel}>
                   Cancel
