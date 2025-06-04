@@ -10,6 +10,7 @@
     /* Chrome, Safari, Opera */
 }
 
+
 .container {
     display: flex;
     flex-direction: column;
@@ -194,12 +195,14 @@
     margin-top: 20px;
     flex-wrap: wrap;
     user-select: none;
+    
 }
 
 .categoryItem {
     padding: 10px 20px;
     padding-top: 13px;
     border: 1px solid var(--border-gray);
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -399,6 +402,7 @@
         justify-content: center;
         margin: 15px 4%;
         gap: 10px;
+        overflow: visible;
         
     }
     
@@ -418,7 +422,6 @@
         left: 0;
         right: 0;
         height: 60px;
-
     }
 
     .logo {
@@ -430,6 +433,10 @@
         display: none;
     }
 
+    .leftPane{
+        overflow: visible;
+    }
+
     .search {}
 
     .sort {
@@ -437,15 +444,19 @@
     }
 
     .category {
+        position: sticky;
+        top: 60px;
         display: flex;
         gap: 10px;
         align-items: center;
-        margin-top: 10px;
+        margin-top: 0px;
+        margin-bottom: -15px;
         flex-wrap: nowrap;
         user-select: none;
         overflow-x: auto;
         overflow-y: hidden;
-        height: 90px;
+        height: 120px;
+        background-color: var(--background);
     }
 
     .category::-webkit-scrollbar {
@@ -492,4 +503,7 @@
         width: 100%;
         grid-template-columns: repeat(2, auto);
     }
+
+
+    
 }

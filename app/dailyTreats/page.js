@@ -107,8 +107,8 @@ export default function DailyTreatsPage() {
                                 </div>
                             ))}
                         </div>
-                        <div className={styles.itemContainer}>
 
+                        <div className={styles.itemContainer}>
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
