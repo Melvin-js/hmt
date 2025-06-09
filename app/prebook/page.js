@@ -140,8 +140,7 @@ export default function DailyTreatsPage() {
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
-                            <ItemCard data={handleItemData} />
-                            <ItemCard data={handleItemData} />
+             
 
                         </div>
 

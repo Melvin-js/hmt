@@ -79,64 +79,67 @@ function ItemCard({ data, cakeMsg }) {
 
   return (
     <div className={styles.card}>
-      <Image src={cake} alt="Cake" className={styles.cake} />
-      <h5>Party Cakelet Chocolate Single</h5>
+      <div className={styles.leftSection}>
+        <h5>Party Cakelet Chocolate Single</h5>
 
-      {cakeMsg !== 'true' && count > 0 ? (
-        <div className={styles.cutomizeButton}>
-          <i className="fa-solid fa-pen" style={{ fontSize: '13px' }}></i>
-          <button className={styles.messageButton} onClick={() => setIsPopupVisible(!isPopupVisible)}>
-            {message === '' ? 'Customize' : 'Edit Message'} {cakeMsg}
-          </button>
-        </div>
-      ) : (
-        <p className={styles.weightLabel}>200gms</p>
-      )}
-
-      {isPopupVisible === true && (
-        <div className={styles.popupOverlay}>
-          <div className={styles.messagePopup}>
-            <button
-              className={styles.closeButton}
-              onClick={() => {
-                setIsPopupVisible(false);
-              }}
-            >
-              <i className="fa-solid fa-xmark"></i>
+        {cakeMsg !== 'true' && count > 0 ? (
+          <div className={styles.cutomizeButton}>
+            <i className="fa-solid fa-pen" style={{ fontSize: '13px' }}></i>
+            <button className={styles.messageButton} onClick={() => setIsPopupVisible(!isPopupVisible)}>
+              {message === '' ? 'Customize' : 'Edit Message'} {cakeMsg}
             </button>
-            <div className={styles.popupContent}>
-              <Image src={cakePopup} alt="Cake Popup" className={styles.popupImage} width={400} />
-              <h4>Customize your order</h4>
-              <p>Write a message on the cake</p>
-              <textarea
-                className={styles.messageInput}
-                placeholder="Enter the message..."
-                value={message} // Controlled component with state
-                onChange={handleChange}
-                maxLength="40" // Correct onChange handler
-              />
-              {count > 1 && <div className={styles.countCakes}>
-                <label htmlFor="cakeCount">Choose the number of cakes to add a special message on.</label>
-                <select id="cakeCount" name="cakeCount" value={msgCount} onChange={handleMsgCountChange}>
-                  {generateOptions(count)}
-                </select>
-              </div>}
-              <div className={styles.popupButtons}>
-                <button className={styles.popupCancel} onClick={handleCancel}>
-                  Cancel
-                </button>
-                <button className={styles.popupSave} onClick={handleSave}>
-                  Save
-                </button>
+          </div>
+        ) : (
+          <p className={styles.weightLabel}>200gms</p>
+        )}
+
+        {isPopupVisible === true && (
+          <div className={styles.popupOverlay}>
+            <div className={styles.messagePopup}>
+              <button
+                className={styles.closeButton}
+                onClick={() => {
+                  setIsPopupVisible(false);
+                }}
+              >
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+              <div className={styles.popupContent}>
+                <Image src={cakePopup} alt="Cake Popup" className={styles.popupImage} width={400} />
+                <h4>Customize your order</h4>
+                <p>Write a message on the cake</p>
+                <textarea
+                  className={styles.messageInput}
+                  placeholder="Enter the message..."
+                  value={message} // Controlled component with state
+                  onChange={handleChange}
+                  maxLength="40" // Correct onChange handler
+                />
+                {count > 1 && <div className={styles.countCakes}>
+                  <label for="cakeCount">Choose the number of cakes to add a special message on.</label>
+                  <select id="cakeCount" name="cakeCount" value={msgCount} onChange={handleMsgCountChange}>
+                    {generateOptions(count)}
+                  </select>
+                </div>}
+                <div className={styles.popupButtons}>
+                  <button className={styles.popupCancel} onClick={handleCancel}>
+                    Cancel
+                  </button>
+                  <button className={styles.popupSave} onClick={handleSave}>
+                    Save
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <div className={styles.tag}>
-        <h4>Rs 500</h4>
+        <h4 className={styles.price}>Rs 500</h4>
+      </div>
 
+
+      <div className={styles.rightSection}>
+        <Image src={cake} alt="Cake" className={styles.cake} />
         <div style={{ textAlign: 'center' }}>
           {!isCounterVisible && (
             <button onClick={toggleCounterVisibility} className={styles.addButton}>
@@ -157,6 +160,7 @@ function ItemCard({ data, cakeMsg }) {
         </div>
       </div>
     </div>
+
   );
 }
 

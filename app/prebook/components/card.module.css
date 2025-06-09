@@ -1,13 +1,14 @@
 .card {
     display: flex;
-    flex-direction: column;
-    width: 100%;
     overflow: hidden;
+    min-width: 270px;
+    gap: 0px;
 }
 
 .card h5 {
     margin-top: 10px;
     font-size: 15.5px;
+    width: 150px;
 }
 
 /* Popup Message */
@@ -35,7 +36,7 @@
 .cutomizeButton:active {
     transform: scale(0.95);
     transition: 0.2s ease-in-out;
-    ;
+    
 }
 
 .weightLabel{
@@ -49,10 +50,57 @@
     font-size: 14.5px;
     font-weight: 400;
     color: rgb(67, 67, 67);
+    cursor: pointer;
     transition: 0.05s ease-in;
 
 }
 
+.price{
+    margin-top: 20px;
+    font-weight: 500;
+
+}
+
+
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cake{
+    width: 130px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+
+.addButton {
+    bottom: 15px;
+    position: relative;
+    background-color: #FF5A5A;
+    padding: 8px 30px;
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    border-radius: 6px;
+    margin-bottom: 4px;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 20px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
+
+
+}
+.addButton:hover {
+    background-color: #f72f2f;
+}
+
+.addButton:active {
+    transform: scale(0.95);
+    transition: 0.2s ease-in;
+}
 
 
 .popupOverlay {
@@ -171,7 +219,7 @@
 }
 
 .popupSave {
-    background-color: #eea039;
+    background-color: #FF5A5A;
     padding: 8px 20px;
     font-size: 15px;
     font-weight: 600;
@@ -214,49 +262,22 @@
     transition: 0.2s ease-in;
 }
 
-.tag {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    user-select: none;
-}
-
-.tag h4 {
-    font-weight: 500;
-    font-size: 17px;
-}
-
-.addButton {
-    background-color: #eea039;
-    padding: 8px 30px;
-    font-size: 13px;
-    font-weight: 600;
-    color: white;
-    border-radius: 6px;
-    margin-bottom: 4px;
-    cursor: pointer;
-    transition: 0.15s ease-in-out;
-}
-
-.addButton:hover {
-    background-color: #f72f2f;
-}
-
-.addButton:active {
-    transform: scale(0.95);
-    transition: 0.2s ease-in;
-}
 
 .container {
+    background-color: #ffffff;
+    position: relative;
+    bottom: 15px;
     display: flex;
-    gap: 10px;
+    justify-content: center;
+    gap: 2px;
     margin-bottom: 3px;
-}
+    border-radius: 8px;
+    width: 90px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 2px 20px, rgba(0, 0, 0, 0.23) 0px 2px 6px;
 
+}
 .counter {
-    color: white;
-    background-color: #3f3f3f;
+    color: rgb(25, 25, 25);
     font-weight: 600;
     height: 35px;
     padding: 5px 5px;
@@ -287,22 +308,34 @@
 
 /* Responsive styles */
 @media (max-width: 600px) {
+
+    .card{
+        width: 100%;
+        justify-content: space-between;
+        gap:10px;
+    
+    }
     .card h5 {
-        font-size: 13px;
+        font-size: 16px;
+        width: 90%;
     }
 
-    .tag h4 {
+    .price{
+
         font-size: 16px;
     }
-
+    .cake{
+        min-width: 140px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 12px;
+    }
     .addButton {
+        bottom: 20px;
         padding: 8px 28px;
         font-size: 12.5px;
     }
 
-    .container {
-        padding-right: 5px;
-    }
 
     .button {
         font-size: 18px;
