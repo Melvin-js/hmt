@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './footer.module.css';
 import Image from 'next/image';
-import logo from '@/public/images/SqOneFooter.png';
-
+import logo from '/public/images/SqOneFooter.png';
 
 const Footer = () => {
 

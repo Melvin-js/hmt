@@ -3,18 +3,17 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './style.module.css';
 import Image from 'next/image';
-import logo from '@/public/images/SqOne_Logo.png';
-import ham_icon from '@/public/vectors/hamburger_icon.png';
-import banner from '@/public/images/banner.png';
-import cakes from '@/public/vectors/CategoryIcons/cakes.png';
-import condiments from '@/public/vectors/CategoryIcons/condiments.png';
-import snacks from '@/public/vectors/CategoryIcons/snacks.png';
-import takeaways from '@/public/vectors/CategoryIcons/takeaways.png';
-import specials from '@/public/vectors/CategoryIcons/specials.png';
+import logo from '/public/images/SqOne_Logo.png';
+import ham_icon from '/public/vectors/hamburger_icon.png';
+import cakes from '/public/vectors/CategoryIcons/cakes.png';
+import condiments from '/public/vectors/CategoryIcons/condiments.png';
+import snacks from '/public/vectors/CategoryIcons/snacks.png';
+import takeaways from '/public/vectors/CategoryIcons/takeaways.png';
+import specials from '/public/vectors/CategoryIcons/specials.png';
 import ItemCard from './components/card';
 import Banner from './components/banner';
-import adBanner from '@/public/images/adBanner.png';
-import menuIcon from '@/public/vectors/menu_icon.png';
+import adBanner from '/public/images/adBanner.png';
+import menuIcon from '/public/vectors/menu_icon.png';
 import Footer from '../components/footer';
 
 

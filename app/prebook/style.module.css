@@ -42,7 +42,7 @@
     color: var(--foreground);
 }
 
-.ham_icon:active{
+.ham_icon:active {
     transform: scale(0.96);
     transition: 0.15s ease-in-out;
 }
@@ -92,99 +92,10 @@
     overflow: hidden;
 }
 
-.searchSort {
-    display: flex;
-    gap: 15px;
-    height: 45px;
-    align-items: center;
-}
-
-.search {
-    border: 1px solid var(--border-gray);
-    border-radius: 8px;
-    padding: 10px 22px;
-    height: 100%;
+/* Date Slider */
+.dateSlider {
     width: 100%;
-    user-select: none;
-    transition: 0.2s ease-in-out;
 }
-
-.search:hover {
-    border: 1px solid black;
-    padding-left: 25px;
-    transition: 0.3s ease-in-out;
-}
-
-
-.search input {
-    font-size: 0.88rem;
-    color: rgb(0, 0, 0);
-    margin-left: 15px;
-    border: none;
-    outline: none;
-    width: 80%;
-    text-wrap: nowrap;
-    box-sizing: border-box;
-
-}
-
-/* Container for dropdown */
-.dropdown {
-    text-wrap: nowrap;
-    position: relative;
-    display: inline-block;
-    user-select: none;
-}
-
-.dropdownButton {
-    padding: 10px clamp(5px, 3vw, 30px);
-    font-size: 0.78rem;
-    border: 1px solid var(--border-gray);
-    border-radius: 8px;
-    cursor: pointer;
-    height: 45.5px;
-    transition: 0.2s ease-in-out;
-}
-
-.dropdownButton:hover {
-    border: 1px solid black;
-    transition: 0.2s ease-in-out;
-}
-
-.dropdownButton:active {
-    transform: scale(0.96);
-    transition: 0.2s ease-in-out;
-}
-
-
-.dropdownContent {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    font-size: 0.8rem;
-    border-radius: 8px;
-    z-index: 10;
-    margin-top: 10px;
-    border-left: 1px solid rgb(203, 203, 203);
-    background-color: #F5F3F0;
-
-}
-
-.dropdownContent a {
-    display: block;
-    padding: 10px 14px;
-    color: #333;
-    text-decoration: none;
-    border-bottom: 1px solid rgb(203, 203, 203);
-}
-
-.dropdownContent a:hover {
-    background-color: #f0f0f0;
-    border-radius: 8px;
-}
-
 
 
 /* Categories */
@@ -195,7 +106,7 @@
     margin-top: 20px;
     flex-wrap: wrap;
     user-select: none;
-    
+
 }
 
 .categoryItem {
@@ -229,7 +140,7 @@
 .categoryItem:active .categoryIcons {
     transform: scale(0.96);
     transition: 0.15s ease-in-out;
-    
+
 }
 
 .categoryIcons {
@@ -254,13 +165,15 @@
     translate: 0 0px;
     border: none;
     cursor: default;
-    
-}
-
-.floatingCategory, .floatingIcon{
-     display: none; 
 
 }
+
+.floatingCategory,
+.floatingIcon {
+    display: none;
+
+}
+
 /* Item Container */
 
 .itemContainer {
@@ -268,7 +181,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 270px);
     justify-items: start;
-    gap:clamp(10px, 2vw, 40px);
+    gap: clamp(10px, 2vw, 40px);
     row-gap: 25px;
     width: 100%;
 }
@@ -327,10 +240,11 @@
     transition: 0.2s ease-in;
 }
 
-.adBanner{
+.adBanner {
     margin-top: 20px;
     transform: scale(1.1);
 }
+
 .bottomPane {
     display: none;
     justify-content: space-between;
@@ -405,9 +319,9 @@
         padding-top: 55px;
         justify-content: center;
         margin: 15px 4%;
-        gap: 10px;  
+        gap: 10px;
     }
-    
+
 
     .navbar {
         display: flex;
@@ -436,11 +350,10 @@
     }
 
 
-    .search {}
-
-    .sort {
-        display: none;
+    .dateSlider {
+        width: 100%;
     }
+
 
     .category {
         display: flex;
@@ -517,7 +430,7 @@
         height: 100vh;
     }
 
-    .floatingIcon{
+    .floatingIcon {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -533,12 +446,12 @@
         z-index: 502;
     }
 
-    .floatingIcon h4{
+    .floatingIcon h4 {
         font-size: 10px;
         color: white;
     }
 
-    .floatingCategory{
+    .floatingCategory {
         display: flex;
         flex-direction: column;
         position: fixed;
@@ -547,7 +460,7 @@
         z-index: 501;
     }
 
-    .floatingMenu{
+    .floatingMenu {
         position: relative;
         bottom: 90px;
         right: 15px;
@@ -565,16 +478,17 @@
         z-index: 504;
     }
 
-    .activeFloatCate{
+    .activeFloatCate {
         color: rgb(21, 21, 21);
         font-weight: 500;
         padding-bottom: 5px;
         border-bottom: 1px solid rgb(21, 21, 21);
-        padding-left: 2px;;
+        padding-left: 2px;
+        ;
         transition: 0.2s ease-in-out;
     }
 
-    
 
-    
+
+
 }

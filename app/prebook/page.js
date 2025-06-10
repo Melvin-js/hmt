@@ -3,19 +3,20 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './style.module.css';
 import Image from 'next/image';
-import logo from '@/public/images/SqOne_Logo.png';
-import ham_icon from '@/public/vectors/hamburger_icon.png';
-import banner from '@/public/images/banner.png';
-import cakes from '@/public/vectors/CategoryIcons/cakes.png';
-import condiments from '@/public/vectors/CategoryIcons/condiments.png';
-import snacks from '@/public/vectors/CategoryIcons/snacks.png';
-import takeaways from '@/public/vectors/CategoryIcons/takeaways.png';
-import specials from '@/public/vectors/CategoryIcons/specials.png';
+import logo from '/public/images/SqOne_Logo.png';
+import ham_icon from '/public/vectors/hamburger_icon.png';
+import banner from '/public/images/banner.png';
+import cakes from '/public/vectors/CategoryIcons/cakes.png';
+import condiments from '/public/vectors/CategoryIcons/condiments.png';
+import snacks from '/public/vectors/CategoryIcons/snacks.png';
+import takeaways from '/public/vectors/CategoryIcons/takeaways.png';
+import specials from '/public/vectors/CategoryIcons/specials.png';
 import ItemCard from './components/card';
 import Banner from './components/banner';
-import adBanner from '@/public/images/adBanner.png';
-import menuIcon from '@/public/vectors/menu_icon.png';
+import adBanner from '/public/images/adBanner.png';
+import menuIcon from '/public/vectors/menu_icon.png';
 import Footer from '../components/footer';
+import DateSlider from './components/dateSlider';
 
 
 
@@ -54,6 +55,13 @@ export default function DailyTreatsPage() {
 
     const toggleMenu = () => setOpenFloatingMenu(!openFloatingMenu);
 
+    const [dateTime, setDateTime] = useState();
+
+    const handleTimeDate = (data) => {
+        setDateTime(true);
+        console.log(`Selected date and time: ${data}`);
+    };
+
     return (
         <>
             <div className={styles.container}>
@@ -71,32 +79,10 @@ export default function DailyTreatsPage() {
                 <Banner />
                 <div className={styles.content}>
                     <div className={styles.leftPane}>
-                        <div className={styles.searchSort}>
-                            <div className={styles.search}>
-                                <i className="fas fa-search text-gray-500 text-sm"></i>
-                                <input type="text" placeholder="Search for items.." className={styles.searchInput} />
-                            </div>
 
-                            <div className={styles.sort}>
-                                <div className={styles.dropdown}>
-                                    <button
-                                        className={styles.dropdownButton}
-                                        onClick={() => setOpen(!open)}
-                                    >
-                                        Sort by: <b>{sortBy}</b>
-                                    </button>
-                                    {open && (
-                                        <div className={styles.dropdownContent}>
-                                            <a href="#" onClick={() => handleSortChange('Price')}>Price</a>
-                                            <a href="#" onClick={() => handleSortChange('Newest')}>Newest</a>
-                                            <a href="#" onClick={() => handleSortChange('Alphabetic Order')}>Alphabetic Order</a>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
+                        <div className={styles.dateSlider}><DateSlider sendData={handleTimeDate} /></div>
 
-                        <div className={styles.category}>
+                        {dateTime && <div className={styles.category}>
                             {categories.map((category, index) => (
                                 <div
                                     key={category.name}
@@ -108,13 +94,14 @@ export default function DailyTreatsPage() {
                                 </div>
                             ))}
                         </div>
-
-                        <button className={styles.floatingIcon} onClick={toggleMenu}>
+                        }
+                        {dateTime && <button className={styles.floatingIcon} onClick={toggleMenu}>
                             <Image src={menuIcon} alt="Menu Icon" className={styles.menuIcon} height={20} />
                             <h4>Menu</h4>
                         </button>
+                        }
 
-                        <div className={styles.floatingCategory}>
+                        {dateTime && <div className={styles.floatingCategory}>
                             {openFloatingMenu && <div className={styles.floatingMenu}>
                                 {categories.map((category, index) => (
                                     <div
@@ -130,20 +117,20 @@ export default function DailyTreatsPage() {
                                 ))}
                             </div>}
                         </div>
-                        {openFloatingMenu && <div className={styles.floatingMenuOverlay}></div>}
+                        }
+
+                        {dateTime && openFloatingMenu && <div className={styles.floatingMenuOverlay}></div>}
 
 
-                        <div className={styles.itemContainer}>
+                        {dateTime && <div className={styles.itemContainer}>
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
-             
-
                         </div>
-
+                        }
                     </div>
                     <div className={styles.rightPane}>
                         {data !== 0 && <div className={styles.cart}>

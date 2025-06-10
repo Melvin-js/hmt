@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import styles from './card.module.css';
 import Image from 'next/image';
-import cake from '@/public/images/Cake.png';
-import cakePopup from '@/public/images/cakePopup.png';
+import cake from '/public/images/Cake.png';
+import cakePopup from '/public/images/cakePopup.png';
 
 function ItemCard({ data, cakeMsg }) {
   const [count, setCount] = useState(0); // Initial count is 0
