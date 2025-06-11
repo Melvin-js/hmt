@@ -409,6 +409,7 @@
 
     } */
     .itemContainer {
+        padding-left: 5px;
         margin-top: 20px;
         width: 100%;
         grid-template-columns: repeat(1, auto);

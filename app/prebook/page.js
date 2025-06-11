@@ -82,7 +82,7 @@ export default function DailyTreatsPage() {
 
                         <div className={styles.dateSlider}><DateSlider sendData={handleTimeDate} /></div>
 
-                        {dateTime && <div className={styles.category}>
+                        <div className={styles.category}>
                             {categories.map((category, index) => (
                                 <div
                                     key={category.name}
@@ -94,14 +94,14 @@ export default function DailyTreatsPage() {
                                 </div>
                             ))}
                         </div>
-                        }
-                        {dateTime && <button className={styles.floatingIcon} onClick={toggleMenu}>
+                        
+                        <button className={styles.floatingIcon} onClick={toggleMenu}>
                             <Image src={menuIcon} alt="Menu Icon" className={styles.menuIcon} height={20} />
                             <h4>Menu</h4>
                         </button>
-                        }
+                        
 
-                        {dateTime && <div className={styles.floatingCategory}>
+                        <div className={styles.floatingCategory}>
                             {openFloatingMenu && <div className={styles.floatingMenu}>
                                 {categories.map((category, index) => (
                                     <div
@@ -117,12 +117,12 @@ export default function DailyTreatsPage() {
                                 ))}
                             </div>}
                         </div>
-                        }
+                        
 
-                        {dateTime && openFloatingMenu && <div className={styles.floatingMenuOverlay}></div>}
+                        {openFloatingMenu && <div className={styles.floatingMenuOverlay}></div>}
 
 
-                        {dateTime && <div className={styles.itemContainer}>
+                        <div className={styles.itemContainer}>
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
@@ -130,7 +130,7 @@ export default function DailyTreatsPage() {
                             <ItemCard data={handleItemData} />
                             <ItemCard data={handleItemData} />
                         </div>
-                        }
+                        
                     </div>
                     <div className={styles.rightPane}>
                         {data !== 0 && <div className={styles.cart}>

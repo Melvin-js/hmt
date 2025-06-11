@@ -80,7 +80,7 @@ function ItemCard({ data, cakeMsg }) {
   return (
     <div className={styles.card}>
       <div className={styles.leftSection}>
-        <h5>Party Cakelet Chocolate Single</h5>
+        <h5>Party Cakelet Double Chocolate Single</h5>
 
         {cakeMsg !== 'true' && count > 0 ? (
           <div className={styles.cutomizeButton}>
