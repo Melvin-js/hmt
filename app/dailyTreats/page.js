@@ -13,9 +13,8 @@ import specials from '/public/vectors/CategoryIcons/specials.png';
 import ItemCard from './components/card';
 import Banner from './components/banner';
 import adBanner from '/public/images/adBanner.png';
-import menuIcon from '/public/vectors/menu_icon.png';
+import menuIcon from '/public/vectors/Menu_icon.png';
 import Footer from '../components/footer';
-
 
 
 export default function DailyTreatsPage() {
