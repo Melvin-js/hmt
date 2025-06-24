@@ -5,6 +5,7 @@ import Image from 'next/image';
 import cake from '/public/images/Cake.png';
 import cakePopup from '/public/images/cakePopup.png';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 
 function ItemCard({ data, cakeMsg }) {
@@ -83,7 +84,7 @@ function ItemCard({ data, cakeMsg }) {
 
   return (
     <div className={styles.card}>
-      <Image src={cake} alt="Cake" className={styles.cake} style={{ visibility: isInfoVisible ? 'hidden' : 'visible' }} />
+      <Image src={cake} alt="Cake" className={styles.cake} />
       <h5>Party Cakelet Chocolate Single</h5>
 
       {cakeMsg !== 'true' && count > 0 ? (
@@ -102,9 +103,19 @@ function ItemCard({ data, cakeMsg }) {
         </div>
       )}
 
-      {isInfoVisible && <div className={styles.infoPanel}>
-        <p>Feel the fantastic fusion of nutty brownie base with soft vanilla cake, frosted with light chocolate icing in this Vanilla Brownie Cake</p>
-      </div>}
+      <AnimatePresence>
+        {isInfoVisible && (
+          <motion.div
+            className={styles.infoPanel}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}
+          >
+            <p>Feel the fantastic fusion of nutty brownie base with soft vanilla cake, frosted with light chocolate icing in this Vanilla Brownie Cake</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 
       {isPopupVisible === true && (
