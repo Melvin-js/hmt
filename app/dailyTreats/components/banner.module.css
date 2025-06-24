@@ -64,4 +64,16 @@
         text-align: center;
         font-size: 12px;
     }
+
+     .banner:hover {
+        gap: 6px;
+
+    }
+
+    .banner:active {
+        gap: 10px;
+        transition: 0.2s ease-in-out;
+        user-select: none;
+
+    }
 }

@@ -106,13 +106,13 @@
     height: 100%;
     width: 100%;
     user-select: none;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
 .search:hover {
     border: 1px solid black;
     padding-left: 25px;
-    transition: 0.3s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
 
@@ -142,13 +142,13 @@
     border: 1px solid var(--border-gray);
     border-radius: 8px;
     cursor: pointer;
-    height: 45.5px;
-    transition: 0.2s ease-in-out;
+    height: 45px;
+    transition: 0.1s ease-in-out;
 }
 
 .dropdownButton:hover {
     border: 1px solid black;
-    transition: 0.2s ease-in-out;
+    transition: 0.1s ease-in-out;
 }
 
 .dropdownButton:active {

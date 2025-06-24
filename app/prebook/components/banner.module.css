@@ -1,43 +1,43 @@
-
-.banner{
+.banner {
     background: linear-gradient(45deg, #d45959, #e13636, #c60000);
     height: 125px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: clamp(25px,5%, 30px);
+    gap: clamp(25px, 5%, 30px);
     border-radius: 20px;
     padding-left: 10px;
     margin: 5px 0;
     transition: 0.4s ease-in-out;
-    
+
 }
 
-.banner p{
+.banner p {
     width: clamp(150px, 35vw, 455px);
     color: white;
 }
 
-.banner:hover{
-    gap: clamp(25px,5%, 60px);
+.banner:hover {
+    gap: clamp(25px, 5%, 60px);
     transition: 0.4s ease-in-out;
 
 }
 
 @media (max-width: 1080px) {
 
-    .banner{
+    .banner {
         flex-direction: column;
         gap: 5px;
         padding: 0;
     }
 
-    .bannerImage{
+    .bannerImage {
         margin-top: 5px;
         height: 40px;
         width: auto;
     }
-    .banner p{
+
+    .banner p {
         width: 400px;
         text-align: center;
         font-size: 14px;
@@ -48,21 +48,34 @@
 
 @media (max-width: 600px) {
 
-    .banner{
+    .banner {
         flex-direction: column;
         gap: 6px;
         border-radius: 15px;
         height: 125px;
     }
 
-    .bannerImage{
+    .bannerImage {
         margin-top: 6px;
         height: 28px;
         width: auto;
     }
-    .banner p{
+
+    .banner p {
         width: 300px;
         text-align: center;
         font-size: 12px;
+    }
+
+    .banner:hover {
+        gap: 6px;
+
+    }
+
+   .banner:active {
+        gap: 10px;
+        transition: 0.2s ease-in-out;
+        user-select: none;
+
     }
 }

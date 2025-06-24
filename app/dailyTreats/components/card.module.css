@@ -1,4 +1,5 @@
 .card {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -14,8 +15,8 @@
 .cutomizeButton {
     display: flex;
     gap: 5px;
-    margin-top: 6px;
-    margin-bottom: -5px;
+    padding-top: 8px;
+    height: 25px;
     justify-content: start;
     align-items: center;
     user-select: none;
@@ -23,26 +24,32 @@
     color: rgb(91, 91, 91);
     cursor: pointer;
     transition: 0.05s ease-in;
-    
+
 }
 
 .cutomizeButton:hover {
     color: rgb(0, 0, 0);
     transition: 0.05s ease-in;
-    ;
+
 }
 
 .cutomizeButton:active {
     transform: scale(0.95);
     transition: 0.2s ease-in-out;
-    ;
 }
 
-.weightLabel{
+.moreInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 25px;
+    padding-top: 5px;
+    user-select: none;
+}
+
+.weightLabel {
     display: flex;
     gap: 5px;
-    margin-top: 6px;
-    margin-bottom: -5.5px;
     justify-content: start;
     align-items: center;
     user-select: none;
@@ -50,9 +57,45 @@
     font-weight: 400;
     color: rgb(67, 67, 67);
     transition: 0.05s ease-in;
+}
+
+#infoIcon {
+    font-size: 18px;
+    color: rgb(62, 62, 62);
+    margin-right: 10px;
+    transition: 0.2s ease-in-out;
+    z-index: 100;
 
 }
 
+#infoIcon:hover {
+    color: #ff9d00;
+    transition: 0.2s ease-in-out;
+}
+
+#infoIcon:active {
+    transform: scale(0.90);
+    transition: 0.2s ease-in-out;
+}
+
+.infoPanel {
+    display: flex;
+    position: absolute;
+    /* background-color: var(--background); */
+    height: 200px;
+    width: 100%;   
+    z-index: 90;
+    padding: 10px 8px;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.infoPanel p {
+    font-size: 15px;
+    text-align: center;
+}
 
 
 .popupOverlay {
@@ -95,7 +138,7 @@
     overflow: hidden;
 }
 
-.popupImage{
+.popupImage {
     margin: auto;
     margin-top: -60px;
     margin-bottom: -30px;
@@ -136,19 +179,19 @@
     transition: 0.2s ease-in;
 }
 
-.countCakes{
+.countCakes {
     margin-top: 5px;
     display: flex;
     flex-direction: column;
-    gap:8px;
+    gap: 8px;
 }
 
-.countCakes label{
+.countCakes label {
     font-size: 15px;
     color: rgb(49, 49, 49);
 }
 
-.countCakes select{
+.countCakes select {
     border: 1px solid rgb(173, 173, 173);
     outline: none;
     width: 60px;
@@ -313,9 +356,26 @@
         font-size: 13px;
     }
 
-    .weightLabel{
+    .weightLabel {
         font-size: 13px;
     }
+
+    #infoIcon:hover {
+        color: rgb(62, 62, 62);
+    }
+
+    .infoPanel {
+        height: 160px;
+        padding: 0px 7px;
+        box-sizing: border-box;
+    }
+
+
+    .infoPanel p {
+        font-size: 12px;
+        text-align: center;
+    }
+
 
     .closeButton {
         top: 15px;
@@ -323,12 +383,12 @@
         font-size: 18px;
     }
 
-    
-    .popupImage{
+
+    .popupImage {
         margin: auto;
         margin-top: -30px;
         margin-bottom: -20px;
-    
+
     }
 
     .popupContent h4 {

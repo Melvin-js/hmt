@@ -4,13 +4,16 @@ import styles from './card.module.css';
 import Image from 'next/image';
 import cake from '/public/images/Cake.png';
 import cakePopup from '/public/images/cakePopup.png';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 function ItemCard({ data, cakeMsg }) {
   const [count, setCount] = useState(0); // Initial count is 0
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [message, setMessage] = useState(''); // State to hold the message input
-  const [initialMessage, setInitialMessage] = useState(''); // To store the initial message when the popup is opened
+  const [initialMessage, setInitialMessage] = useState('');
+  const [isInfoVisible, setisInfoVisible] = useState(false);
 
   // Increment and decrement functions
   const increment = () => setCount((prevCount) => prevCount + 1);
@@ -65,6 +68,14 @@ function ItemCard({ data, cakeMsg }) {
     setMsgCount(event.target.value);
   };
 
+  const handlePressStart = () => {
+    setisInfoVisible(true);
+  };
+
+  const handlePressEnd = () => {
+    setisInfoVisible(false);
+  };
+
   const generateOptions = (max) => {
     let options = [];
     for (let i = 0; i <= max; i++) {
@@ -75,11 +86,12 @@ function ItemCard({ data, cakeMsg }) {
       );
     }
     return options;
+
   };
 
   return (
     <div className={styles.card}>
-      <Image src={cake} alt="Cake" className={styles.cake} />
+      <Image src={cake} alt="Cake" className={styles.cake} style={{ visibility: isInfoVisible ? 'hidden' : 'visible' }} />
       <h5>Party Cakelet Chocolate Single</h5>
 
       {cakeMsg !== 'true' && count > 0 ? (
@@ -90,8 +102,23 @@ function ItemCard({ data, cakeMsg }) {
           </button>
         </div>
       ) : (
-        <p className={styles.weightLabel}>200gms</p>
+        <div className={styles.moreInfo}>
+          <p className={styles.weightLabel}>200gms</p>
+          <buttton onMouseDown={handlePressStart}
+            onMouseUp={handlePressEnd}
+            onMouseLeave={handlePressEnd}
+            onTouchStart={handlePressStart}
+            onTouchEnd={handlePressEnd}>
+            <i className="bi bi-info-circle" id={styles.infoIcon}></i>
+          </buttton>
+
+        </div>
       )}
+
+      {isInfoVisible && <div className={styles.infoPanel}>
+        <p>Feel the fantastic fusion of nutty brownie base with soft vanilla cake, frosted with light chocolate icing in this Vanilla Brownie Cake</p>
+      </div>}
+
 
       {isPopupVisible === true && (
         <div className={styles.popupOverlay}>
@@ -139,7 +166,10 @@ function ItemCard({ data, cakeMsg }) {
 
         <div style={{ textAlign: 'center' }}>
           {!isCounterVisible && (
-            <button onClick={toggleCounterVisibility} className={styles.addButton}>
+            <button onClick={() => {
+              toggleCounterVisibility();
+              setisInfoVisible(false);
+            }} className={styles.addButton}>
               ADD
             </button>
           )}
