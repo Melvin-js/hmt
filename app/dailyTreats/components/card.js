@@ -97,7 +97,7 @@ function ItemCard({ data, cakeMsg }) {
         <div className={styles.moreInfo}>
           <p className={styles.weightLabel}>200gms</p>
           <button onClick={() => setIsInfoVisible(!isInfoVisible)}>
-            <i className="bi bi-info-circle" id={styles.infoIcon}></i>
+            <i className="bi bi-info-circle" id={styles.infoIcon} style={{ color: isInfoVisible ? '#ff9d00' : 'rgb(62, 62, 62)' }}></i>
           </button>
         </div>
       )}

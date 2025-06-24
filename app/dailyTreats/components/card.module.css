@@ -69,7 +69,7 @@
 }
 
 #infoIcon:hover {
-    color: #ff9d00;
+    cursor: pointer;
     transition: 0.2s ease-in-out;
 }
 
