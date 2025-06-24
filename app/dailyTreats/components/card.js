@@ -13,7 +13,7 @@ function ItemCard({ data, cakeMsg }) {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [message, setMessage] = useState(''); // State to hold the message input
   const [initialMessage, setInitialMessage] = useState('');
-  const [isInfoVisible, setisInfoVisible] = useState(false);
+  const [isInfoVisible, setIsInfoVisible] = useState(false);
 
   // Increment and decrement functions
   const increment = () => setCount((prevCount) => prevCount + 1);
@@ -68,14 +68,6 @@ function ItemCard({ data, cakeMsg }) {
     setMsgCount(event.target.value);
   };
 
-  const handlePressStart = () => {
-    setisInfoVisible(true);
-  };
-
-  const handlePressEnd = () => {
-    setisInfoVisible(false);
-  };
-
   const generateOptions = (max) => {
     let options = [];
     for (let i = 0; i <= max; i++) {
@@ -104,14 +96,9 @@ function ItemCard({ data, cakeMsg }) {
       ) : (
         <div className={styles.moreInfo}>
           <p className={styles.weightLabel}>200gms</p>
-          <buttton onMouseDown={handlePressStart}
-            onMouseUp={handlePressEnd}
-            onMouseLeave={handlePressEnd}
-            onTouchStart={handlePressStart}
-            onTouchEnd={handlePressEnd}>
+          <button onClick={() => setIsInfoVisible(!isInfoVisible)}>
             <i className="bi bi-info-circle" id={styles.infoIcon}></i>
-          </buttton>
-
+          </button>
         </div>
       )}
 
@@ -168,7 +155,7 @@ function ItemCard({ data, cakeMsg }) {
           {!isCounterVisible && (
             <button onClick={() => {
               toggleCounterVisibility();
-              setisInfoVisible(false);
+              setIsInfoVisible(false);
             }} className={styles.addButton}>
               ADD
             </button>
