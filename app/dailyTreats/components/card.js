@@ -12,7 +12,7 @@ function ItemCard({ data, cakeMsg }) {
   const [count, setCount] = useState(0); 
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [message, setMessage] = useState(''); /
+  const [message, setMessage] = useState(''); 
   const [initialMessage, setInitialMessage] = useState('');
   const [isInfoVisible, setIsInfoVisible] = useState(false);
 
@@ -20,7 +20,6 @@ function ItemCard({ data, cakeMsg }) {
   const increment = () => setCount((prevCount) => prevCount + 1);
   const decrement = () => setCount((prevCount) => prevCount - 1);
 
-  // Toggle visibility of the counter
   const toggleCounterVisibility = () => {
     if (!isCounterVisible) {
       setCount(1); 
@@ -28,7 +27,6 @@ function ItemCard({ data, cakeMsg }) {
     setIsCounterVisible((prevState) => !prevState);
   };
 
-  // Handle the count reaching zero
   const handleZeroCount = () => {
     if (count === 0) {
       setIsCounterVisible(false);
@@ -39,7 +37,6 @@ function ItemCard({ data, cakeMsg }) {
     data(count);
   };
 
-  // Use useEffect to watch for count reaching zero and hide the counter
   useEffect(() => {
     handleZeroCount();
     sendData(count);
