@@ -9,10 +9,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 
 function ItemCard({ data, cakeMsg }) {
-  const [count, setCount] = useState(0); // Initial count is 0
+  const [count, setCount] = useState(0); 
   const [isCounterVisible, setIsCounterVisible] = useState(false);
   const [isPopupVisible, setIsPopupVisible] = useState(false);
-  const [message, setMessage] = useState(''); // State to hold the message input
+  const [message, setMessage] = useState(''); /
   const [initialMessage, setInitialMessage] = useState('');
   const [isInfoVisible, setIsInfoVisible] = useState(false);
 
@@ -23,7 +23,7 @@ function ItemCard({ data, cakeMsg }) {
   // Toggle visibility of the counter
   const toggleCounterVisibility = () => {
     if (!isCounterVisible) {
-      setCount(1); // Set initial count to 1 when the counter is shown
+      setCount(1); 
     }
     setIsCounterVisible((prevState) => !prevState);
   };
@@ -50,22 +50,20 @@ function ItemCard({ data, cakeMsg }) {
   };
 
   const handleSave = () => {
-    // Save the message when Save button is clicked
-    setInitialMessage(message); // Save the message
-    setIsPopupVisible(false); // Close the popup
+   
+    setInitialMessage(message); 
+    setIsPopupVisible(false); 
   };
 
   const handleCancel = () => {
-    // Revert to the initial message if Cancel button is clicked
-    setMessage(initialMessage); // Set the message to the initial saved message
-    setIsPopupVisible(false); // Close the popup
+    setMessage(initialMessage); 
+    setIsPopupVisible(false); 
   };
 
   const [msgCount, setMsgCount] = useState(1);
   const [initialMsgCount, setInitialMsgCount] = useState(1);
 
   const handleMsgCountChange = (event) => {
-    // Update state with the selected value from the dropdown
     setMsgCount(event.target.value);
   };
 
@@ -136,9 +134,9 @@ function ItemCard({ data, cakeMsg }) {
               <textarea
                 className={styles.messageInput}
                 placeholder="Enter the message..."
-                value={message} // Controlled component with state
+                value={message} 
                 onChange={handleChange}
-                maxLength="40" // Correct onChange handler
+                maxLength="40" 
               />
               {count > 1 && <div className={styles.countCakes}>
                 <label htmlFor="cakeCount">Choose the number of cakes to add a special message on.</label>

@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
-import styles from './dateSlider.module.css'; // Import the CSS module
+import styles from './dateSlider.module.css';
 
-// Function to get two weeks of dates
 function getTwoWeeksDates() {
   const today = new Date();
   const dates = [];
 
   for (let i = 0; i < 10; i++) {
     const date = new Date(today);
-    date.setDate(today.getDate() + i); // Add i days to today
+    date.setDate(today.getDate() + i);
 
-    // Skip Sundays (dayOfWeek === 0)
     if (date.getDay() === 0) {
-      continue; // Skip Sunday
+      continue; 
     }
 
     const formatted = date.toLocaleDateString('en-US', {
@@ -22,7 +20,7 @@ function getTwoWeeksDates() {
 
     const finalFormatted = formatted.replace(' ', ', ');
 
-    dates.push({ date: finalFormatted, dayOfWeek: date.getDay() });  // Save date and the day of the week
+    dates.push({ date: finalFormatted, dayOfWeek: date.getDay() });  
   }
 
   return dates;
@@ -52,9 +50,9 @@ export default function DateSlider({ sendData }) {
     setSelectedTime(time);
   };
 
-  // Function to check if a date is unavailable
+
   const isUnavailable = (date) => {
-    return unavailableDates.includes(date); // Check if the date is in the unavailable array
+    return unavailableDates.includes(date); 
   };
 
   return (

@@ -28,7 +28,7 @@ export default function DailyTreatsPage() {
     const handleDecrease = () => quantity > 0 && setQuantity(quantity - 1);
 
     const [open, setOpen] = useState(false)
-    const [sortBy, setSortBy] = useState('Price') // default sorting
+    const [sortBy, setSortBy] = useState('Price') 
 
     const handleSortChange = (method) => {
         setSortBy(method)
