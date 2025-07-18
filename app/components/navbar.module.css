@@ -1,0 +1,111 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 6px;
+    z-index: 10;
+    user-select: none;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.navLinks {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.ham_icon:active {
+    transform: scale(0.96);
+    transition: 0.15s ease-in-out;
+}
+
+.navLinkText {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--foreground);
+    transition: 0.15s ease-in-out;
+}
+
+.navLinkText a {
+    transition: 0.15s ease-in-out;
+}
+
+.navLinkText a:hover {
+    transform: translateY(-2px);
+    transition: 0.15s ease-in-out;
+}
+
+.navLinkText a:active {
+    transform: scale(0.96);
+    transition: 0.15s ease-in-out;
+}
+
+.rightPane {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    opacity: 0.8;
+    /* will be overridden by framer motion animation */
+    z-index: 999;
+    /* below the rightPane */
+}
+
+
+
+
+@media (max-width: 700px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        box-shadow: 0px -0px 15px 2px rgba(34, 34, 34, 0.287);
+        background-color: white;
+        padding: 0 4%;
+        padding-right: 5%;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+    }
+
+    .logo {
+        height: 40px;
+        width: auto;
+    }
+
+    .navLinkText {
+        display: none;
+    }
+
+    .rightPane {
+        width: 260px;
+        height: 100vh;
+
+    }
+
+}

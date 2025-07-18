@@ -1,0 +1,7 @@
+.mainFrame {
+    display: flex;
+    flex-direction: column;
+    margin: 22px 8%;
+    gap: 10px;
+    overflow-x: hidden;
+}

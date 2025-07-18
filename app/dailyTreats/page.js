@@ -3,8 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import styles from './style.module.css';
 import Image from 'next/image';
-import logo from '/public/images/SqOne_Logo.png';
-import ham_icon from '/public/vectors/hamburger_icon.png';
 import cakes from '/public/vectors/CategoryIcons/cakes.png';
 import condiments from '/public/vectors/CategoryIcons/condiments.png';
 import snacks from '/public/vectors/CategoryIcons/snacks.png';
@@ -15,6 +13,7 @@ import Banner from './components/banner';
 import adBanner from '/public/images/adBanner.png';
 import menuIcon from '/public/vectors/Menu_icon.png';
 import Footer from '../components/footer';
+import Navbar from '../components/navbar'
 
 
 export default function DailyTreatsPage() {
@@ -55,17 +54,7 @@ export default function DailyTreatsPage() {
     return (
         <>
             <div className={styles.container}>
-                <div className={styles.navbar}>
-                    <Image src={logo} alt="Logo" className={styles.logo} unoptimized />
-                    <div className={styles.navLinks}>
-                        <div className={styles.navLinkText}>
-                            <a href="/dailyTreats">LOGIN</a>
-                            <a href="/dailyTreats">MY ORDERS</a>
-                        </div>
-
-                        <a href="/dailyTreats"><Image src={ham_icon} alt="Icon" className={styles.ham_icon} height={18} /></a>
-                    </div>
-                </div>
+                <div className={styles.navbar}><Navbar onPage={'dailyTreats'} /></div>
                 <Banner />
                 <div className={styles.content}>
                     <div className={styles.leftPane}>
@@ -101,7 +90,7 @@ export default function DailyTreatsPage() {
                                     className={`${styles.categoryItem} ${selectedCategory === category.name ? styles.activeCate : ''}`}
                                     onClick={() => setSelectedCategory(category.name)}
                                 >
-                                    <Image src={category.image} alt={category.name} className={styles.categoryIcons} />
+                                    <Image src={category.image} alt={category.name} className={styles.categoryIcons} height={50} width={50} />
                                     <h5>{category.name}</h5>
                                 </div>
                             ))}
